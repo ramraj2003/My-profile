@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/PC/OneDrive/Desktop/Resume.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramarajan G - Lead Motion Graphics Designer</title>
+    <style>
+        :root {
+            --bg-base: #0f0518;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-on-dark: #e0e0e0;
+            --accent-green: #d1f2d1;
+            --glass-panel-bg: rgba(255, 255, 255, 0.03);
+            
+            --color-ae: #9999FF;
+            --color-pr: #9999FF;
+            --color-ps: #31A8FF;
+            --color-ai: #FF9A00;
+            --color-lr: #31A8FF;
+            --color-id: #FF3366;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-on-dark);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .ambient-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1; overflow: hidden;
+        }
+
+        .blob-1 {
+            position: absolute; top: -10%; left: -10%; width: 600px; height: 600px;
+            background: rgba(138, 43, 226, 0.6); border-radius: 50%;
+            filter: blur(120px); animation: pulse 10s infinite alternate;
+        }
+
+        .blob-2 {
+            position: absolute; bottom: -20%; right: -10%; width: 700px; height: 700px;
+            background: rgba(74, 144, 226, 0.5); border-radius: 50%;
+            filter: blur(150px); animation: pulse 12s infinite alternate-reverse;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(30px, 50px); }
+        }
+
+        .resume-wrapper {
+            max-width: 1150px; width: 100%;
+            background: rgba(20, 10, 30, 0.4);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border-radius: 40px; border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+            overflow: hidden; display: flex; flex-direction: column;
+            position: relative; z-index: 1;
+        }
+
+        .header-section {
+            padding: 60px 50px; display: flex; align-items: center;
+            justify-content: space-between; gap: 40px; background: rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-main { display: flex; align-items: center; gap: 35px; }
+        .avatar { width: 170px; height: 170px; border-radius: 40px; object-fit: cover; border: 1px solid rgba(255,255,255,0.2); }
+        .name-meta h1 { font-size: 3.5rem; margin: 0; font-weight: 800; color: #ffffff; letter-spacing: -1px; }
+        .designation { font-size: 1.3rem; color: var(--accent-green); margin-top: 5px; }
+        .contact-info { margin-top: 15px; font-size: 0.95rem; color: #ccc; line-height: 1.6; }
+
+        .stats-column { display: flex; flex-direction: column; gap: 15px; width: 220px; }
+        .experience-hero { text-align: center; background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 30px; border: 1px solid var(--glass-border); }
+        .hero-num { display: block; font-size: 5rem; font-weight: 900; line-height: 1; color: #ffffff; }
+        .hero-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; color: var(--accent-green); }
+
+        .portfolio-link-panel {
+            background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px;
+            padding: 15px; text-align: center; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            transition: 0.3s ease; cursor: pointer;
+        }
+        .portfolio-link-panel span { color: #fff; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+
+        .main-container { padding: 40px 50px 60px 50px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
+        .section-header { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: var(--accent-green); text-transform: uppercase; letter-spacing: 2px; }
+        .glass-panel { border-radius: 30px; background: var(--glass-panel-bg); backdrop-filter: blur(20px); padding: 35px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 40px; }
+
+        /* Skill Pill Styling */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .skill-pill:hover {
+            background: rgba(209, 242, 209, 0.1);
+            border-color: var(--accent-green);
+            color: #fff;
+        }
+
+        /* Experience Styling */
+        .job-item { 
+            margin-bottom: 30px; 
+            border-bottom: 1px solid rgba(255,255,255,0.08); 
+            padding-bottom: 25px; 
+            position: relative;
+        }
+        .job-title { font-weight: 800; font-size: 1.25rem; color: #fff; padding-right: 130px; }
+        .job-meta { font-size: 0.9rem; color: var(--accent-green); margin: 5px 0 15px 0; padding-right: 130px; }
+        .job-desc ul { list-style: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6; color: #bbb; }
+        .job-desc li { position: relative; padding-left: 25px; margin-bottom: 10px; }
+        .job-desc li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 7px; width: 8px; height: 8px;
+            background: var(--accent-green); transform: rotate(45deg);
+        }
+
+        .job-duration-badge {
+            position: absolute; top: 0; right: 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px; border-radius: 12px; border: 1px solid var(--glass-border);
+            display: flex; flex-direction: row; align-items: baseline; gap: 6px; backdrop-filter: blur(5px);
+        }
+        .job-duration-badge .badge-num { font-size: 1.4rem; font-weight: 900; color: #ffffff; line-height: 1; }
+        .job-duration-badge .badge-label { text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.75rem; color: var(--accent-green); line-height: 1; }
+
+        /* Technical Skills Bars */
+        .skill-row { margin-bottom: 22px; }
+        .skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .skill-name-wrap { display: flex; align-items: center; gap: 10px; }
+        .adobe-icon {
+            width: 28px; height: 28px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 14px; color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .bar-bg { height: 10px; background: rgba(0,0,0,0.3); border-radius: 5px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 5px; box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+
+        .achievement-tag {
+            display: inline-block; margin-top: 10px; padding: 5px 12px;
+            background: rgba(209, 242, 209, 0.1); border: 1px solid rgba(209, 242, 209, 0.3);
+            border-radius: 8px; color: var(--accent-green); font-size: 0.85rem; font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .main-container { grid-template-columns: 1fr; }
+            .header-section { flex-direction: column; text-align: center; }
+            .profile-main { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ambient-bg">
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+</div>
+
+<div class="resume-wrapper">
+    <header class="header-section">
+        <div class="profile-main">
+            <img src="./Ramarajan G - Lead Motion Graphics Designer_files/ramraj_2003.jpg" alt="Ramarajan G" class="avatar">
+            <div class="name-meta">
+                <h1>Ramarajan G</h1>
+                <div class="designation">Lead Motion Graphics Designer</div>
+                <div class="contact-info">ramraj2003@gmail.com | 9003503137</div>
+            </div>
+        </div>
+        <div class="stats-column">
+            <div class="experience-hero">
+                <span class="hero-num">11+</span>
+                <span class="hero-label">Total Years</span>
+            </div>
+            <a href="https://vimeo.com/user40529505" target="_blank" class="portfolio-link-panel">
+                <span>View Portfolio</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section>
+            <div class="section-header">Professional Summary</div>
+            <div class="glass-panel">
+                <p style="margin:0; line-height:1.7; font-size:1.05rem;">
+                    Accomplished Lead Motion Graphics Designer with over 11 years of multi-disciplinary experience in Graphics, Motion Design, and Video Production. Expert in advanced titling techniques and fundamental design principles to deliver visually rich content. Strategic leader recognized for managing 300+ projects with a high success rate.
+                </p>
+            </div>
+
+            <div class="section-header">Working Experience</div>
+            <div class="glass-panel">
+                <div class="job-item">
+                    <div class="job-duration-badge">
+                        <span class="badge-num">5.5</span>
+                        <span class="badge-label">Years</span>
+                    </div>
+                    <div class="job-title">MSC Technology</div>
+                    <div class="job-meta">Lead Motion Graphics Designer | Sept 2020 – Present</div>
+                    <div class="job-desc">
+                        <ul>
+                            <li>Promoted to Lead Motion Graphics Designer in March 2026.</li>
+                            <li>Animated over 20+ hours of high-quality interactive learning content.</li>
+                            <li>Collaborated with global stakeholders and content writers to finalize complex video scripts.</li>
+                            <li>Translated strategic goals for 15+ clients into creative video-based solutions.</li>
+                            <li>Spearheaded a production team managing 300+ projects with a 95% deadline success rate.</li>
+                            <li>Directed art style, photography/videography for corporate events, and quality assurance.</li>
+                        </ul>
+                        <div class="achievement-tag">🏆 Best Employee of the Year 2021</div>
+                        <div class="achievement-tag">📈 Promoted to Senior Motion Graphics Designer (2021)</div>
+                    </div>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-duration-badge">
+                        <span class="badge-num">1.3</span>
+                        <span class="badge-label">Years</span>
+                    </div>
+                    <div class="job-title">Novac Technology Solutions</div>
+                    <div class="job-meta">Senior Executive (L&amp;D) | 2019 – 2020</div>
+                    <div class="job-desc">
+                        <ul>
+                            <li>Created high-end explainer videos for financial domains.</li>
+                            <li>Improved graphical aesthetics through corporate-standard infographic work.</li>
+                            <li>Managed end-to-end production lifecycles including multi-language audio sync.</li>
+                        <li>Consistently exceeded daily deadlines for corporate learning content.</li>
+                        </ul>
+                        <div class="achievement-tag">⭐ Star of the Month (Aug 2020)</div>
+                    </div>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-duration-badge">
+                        <span class="badge-num">4.4</span>
+                        <span class="badge-label">Years</span>
+                    </div>
+                    <div class="job-title">Amazon</div>
+                    <div class="job-meta">Retouch Associate | Mar 2015 – 2019</div>
+                    <div class="job-desc">
+                        <ul>
+                            <li>Enhanced product imagery to optimize sales performance.</li>
+                            <li>Executed precise color retouching and matte painting for variant accuracy.</li>
+                            <li>Engineered automated Photoshop actions to significantly reduce production time.</li>
+                        </ul>
+                        <div class="achievement-tag">🏅 Wall of Fame (July 2017)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">Technical Mastery</div>
+            <div class="glass-panel">
+                <div class="skill-row">
+                    <div class="skill-header">
+                        <div class="skill-name-wrap">
+                            <div class="adobe-icon" style="background:#00005b; border-color:var(--color-ae); color:var(--color-ae);">Ae</div>
+                            <span class="skill-name">After Effects</span>
+                        </div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:95%; background:var(--color-ae);"></div></div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-header">
+                        <div class="skill-name-wrap">
+                            <div class="adobe-icon" style="background:#00005b; border-color:var(--color-pr); color:var(--color-pr);">Pr</div>
+                            <span class="skill-name">Premiere Pro</span>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:90%; background:var(--color-pr);"></div></div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-header">
+                        <div class="skill-name-wrap">
+                            <div class="adobe-icon" style="background:#001e36; border-color:var(--color-ps); color:var(--color-ps);">Ps</div>
+                            <span class="skill-name">Photoshop</span>
+                        </div>
+                        <span class="skill-percentage">92%</span>
+                    </div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:92%; background:var(--color-ps);"></div></div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-header">
+                        <div class="skill-name-wrap">
+                            <div class="adobe-icon" style="background:#330000; border-color:var(--color-ai); color:var(--color-ai);">Ai</div>
+                            <span class="skill-name">Illustrator</span>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:85%; background:var(--color-ai);"></div></div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-header">
+                        <div class="skill-name-wrap">
+                            <div class="adobe-icon" style="background:#001e36; border-color:var(--color-lr); color:var(--color-lr);">Lr</div>
+                            <span class="skill-name">Lightroom</span>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:80%; background:var(--color-lr);"></div></div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-header">
+                        <div class="skill-name-wrap">
+                            <div class="adobe-icon" style="background:#33001a; border-color:var(--color-id); color:var(--color-id);">Id</div>
+                            <span class="skill-name">InDesign</span>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:75%; background:var(--color-id);"></div></div>
+                </div>
+            </div>
+
+            <div class="section-header">Key Skills</div>
+            <div class="glass-panel">
+                <div class="skills-grid">
+                    <span class="skill-pill">Motion Graphics</span>
+                    <span class="skill-pill">Project Management</span>
+                    <span class="skill-pill">Creative collaboration</span>
+                    <span class="skill-pill">Storyboard creation</span>
+                    <span class="skill-pill">Concept Development</span>
+                    <span class="skill-pill">2D Animation</span>
+                    <span class="skill-pill">Digital Marketing</span>
+                    <span class="skill-pill">Visual Communication</span>
+                    <span class="skill-pill">Branding &amp; Identity</span>
+                    <span class="skill-pill">Advertising</span>
+                    <span class="skill-pill">Client Relationship Management</span>
+                </div>
+            </div>
+
+            <div class="section-header">Education</div>
+            <div class="glass-panel">
+                <div class="info-value">B.Sc Multimedia (2012-2015)<br>Annamalai University</div>
+                <div class="info-value" style="margin-top:10px;">Diploma in Mechanical (2005-2008)</div>
+                <div class="info-value" style="margin-top:10px;">Two Year Diploma Program (AAASP)<br>Arena Animation Institute</div>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+</body></html>
